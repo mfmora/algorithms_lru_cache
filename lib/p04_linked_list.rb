@@ -15,8 +15,8 @@ class Link
   end
 
   def remove
-    @prev.next = @next
-    @next.prev = @prev
+    @prev.next = @next if @prev
+    @next.prev = @prev if @next
     @next = nil
     @prev = nil
     self
