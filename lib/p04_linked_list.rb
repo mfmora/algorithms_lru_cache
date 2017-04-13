@@ -71,7 +71,13 @@ class LinkedList
   end
 
   def update(key, val)
-    each { |link| link.val = val if link.key == key }
+    each do |link|
+      if link.key == key
+        link.val = val
+        return link
+      end
+    end
+    nil
   end
 
   def remove(key)
